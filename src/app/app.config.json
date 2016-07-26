@@ -1,0 +1,13 @@
+{
+  "appname": "aaxis-yadnesh-test-seller-1",
+  "ocscope": "FullAccess DevCenterImpersonate BuyerAdmin BuyerReader DevCenterWebHookAdmin",
+  "clientid": "55B93D49-15C1-4587-BAF4-ECDD3AC49E7F",
+  "buyerid": "newbuyer",
+  "environment": "prod",
+  "base": {
+    "left":true,
+    "right":false,
+    "top":true,
+    "bottom":false
+  }
+}
