@@ -1,0 +1,69 @@
+<h3 class="page-header">
+    <b>Edit Promotion:</b> {{promotionEdit.promotionName}}
+</h3>
+<form name="PromotionEditForm" ng-submit="promotionEdit.Submit()" novalidate>
+    <div class="row">
+        <div class="form-group col-sm-6">
+            <label for="promotionIDInput">ID</label>
+            <input id="promotionIDInput" ordercloud-auto-id type="text" pattern="([A-Za-z0-9\-\_]+)" pattern-err-type="ID_Name" class="form-control" ng-model="promotionEdit.promotion.ID"/>
+        </div>
+        <div class="form-group col-sm-6">
+            <label for="promotionNameInput">Promotion Name</label>
+            <input id="promotionNameInput" type="text" class="form-control" ng-model="promotionEdit.promotion.Name"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-sm-6">
+            <label for="promotionCodeInput">Promotion Code</label>
+            <input id="promotionCodeInput" type="text" class="form-control" ng-model="promotionEdit.promotion.Code" required="true"/>
+        </div>
+        <div class="form-group col-sm-6">
+            <label for="promotionUsagesRemainingInput">Promotion Usages Remaining</label>
+            <input id="promotionUsagesRemainingInput" type="number" class="form-control" ng-model="promotionEdit.promotion.UsagesRemaining"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 form-group">
+            <label for="promotionDescriptionInput">Description</label>
+            <textarea id="promotionDescriptionInput" type="text" class="form-control" ng-model="promotionEdit.promotion.Description"></textarea>
+        </div>
+        <div class="col-sm-6 form-group">
+            <label for="promotionFinePrintInput">Fine Print</label>
+            <textarea id="promotionFinePrintInput" type="text" class="form-control" ng-model="promotionEdit.promotion.FinePrint"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label for="promotionStartDateInput">Start Date</label>
+            <input class="form-control" ng-show="application.isTouchDevice" type="date" id="promotionStartDateInput2" ng-model="promotionEdit.promotion.StartDate"/>
+            <input id="promotionStartDateInput" ng-hide="application.isTouchDevice" type="text" ng-click="open1 = !open1" is-open="open1" uib-datepicker-popup="MM/dd/yyyy" datepicker-append-to-body="true" class="form-control" ng-model="promotionEdit.promotion.StartDate">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="promotionEndDateInput">End Date</label>
+            <input class="form-control" ng-show="application.isTouchDevice" type="date" id="promotionEndDateInput2" ng-model="promotionEdit.promotion.ExpirationDate"/>
+            <input id="promotionEndDateInput" ng-hide="application.isTouchDevice" type="text" ng-click="open2 = !open2" is-open="open2" uib-datepicker-popup="MM/dd/yyyy" datepicker-append-to-body="true" class="form-control" ng-model="promotionEdit.promotion.EndDate">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-sm-6">
+            <label for="promotionEligibleExpressionInput">Eligible Expression</label>
+            <input id="promotionEligibleExpressionInput" type="text" class="form-control" ng-model="promotionEdit.promotion.EligibleExpression" required="true"/>
+        </div>
+        <div class="form-group col-sm-6">
+            <label for="promotionValueExpressionInput">Value Expression</label>
+            <input id="promotionValueExpressionInput" type="text" class="form-control" ng-model="promotionEdit.promotion.ValueExpression" required="true"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-sm-12">
+            <label for="promotionCanCombineInput">
+                <input id="promotionCanCombineInput" type="checkbox" ng-model="promotionEdit.promotion.CanCombine"/>
+                Can Combine
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" ng-disabled="PromotionCreateForm.$invalid">Save</button>
+        <button type="button" class="btn btn-default" ui-sref="^">Cancel</button>
+    </div>
+</form>
